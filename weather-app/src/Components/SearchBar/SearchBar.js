@@ -22,7 +22,7 @@ function SearchBar({ search, setSearch, onSearchChange }) {
         options: response_1.data.map((city) => {
           return {
             value: `${city.latitude} ${city.longitude}`, //GETTING THE LAT & LONG FROM THE DATA
-            label: `${city.name}, ${city.country}`, //THIS IS WHAT IS VISIBLE TO THE END USER
+            label: `${city.name}, ${city.countryCode}`, //THIS IS WHAT IS VISIBLE TO THE END USER
           };
         }),
       };
