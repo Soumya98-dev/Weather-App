@@ -10,5 +10,7 @@ Used the _npm_ packages **react-accessible-accordion** , **react-select-async-pa
 
 -> _debounceTimeout_ -> The amount of time the debounce function will wait after the last received action before executing function
 
--> Used the **react-accessible-accordion** npm package. 
-*allowZeroExpanded* -> allows all accordian to be closed. 
+-> Used the **react-accessible-accordion** npm package.
+_allowZeroExpanded_ -> allows all accordian to be closed.
+
+**Live Link** : https://Soumya98-dev.github.io/Weather-App
