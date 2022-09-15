@@ -3,6 +3,7 @@ import "./App.css";
 import SearchBar from "./Components/SearchBar/SearchBar";
 import CurrentWeather from "./Components/CurrentWeather/CurrentWeather";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
+import Forecast from "./Components/ForecastWeather/Forecast";
 
 function App() {
   // *** INITIALIZING STATE FOR THE SEARCH INPUT
@@ -14,8 +15,12 @@ function App() {
 
   const onSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
-    const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`);
-    const forecastFetch = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`);
+    const currentWeatherFetch = fetch(
+      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
+    );
+    const forecastFetch = fetch(
+      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
+    );
 
     Promise.all([currentWeatherFetch, forecastFetch])
       .then(async (response) => {
@@ -28,8 +33,8 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  console.log(weather);
-  console.log(forecast);
+  // console.log(weather);
+  // console.log(forecast);
 
   return (
     <div className="container">
@@ -38,7 +43,8 @@ function App() {
         setSearch={setSearch}
         onSearchChange={onSearchChange}
       />
-      {weather && <CurrentWeather data={weather}/>}
+      {weather && <CurrentWeather data={weather} />}
+      {weather && <Forecast data={forecast} />}
     </div>
   );
 }

@@ -14,8 +14,7 @@ function SearchBar({ search, setSearch, onSearchChange }) {
   const loadOptions = async (inputValue) => {
     try {
       const response = await fetch(
-        `${Geo_DB_Cities_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
-        geoAPIOptions
+        `${Geo_DB_Cities_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`, geoAPIOptions
       );
       const response_1 = await response.json();
       return {

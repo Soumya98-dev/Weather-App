@@ -9,3 +9,6 @@ Used the _npm_ packages **react-accessible-accordion** , **react-select-async-pa
 => **react-select-async-paginate** -> Alternate of Async, supports loading page by page
 
 -> _debounceTimeout_ -> The amount of time the debounce function will wait after the last received action before executing function
+
+-> Used the **react-accessible-accordion** npm package. 
+*allowZeroExpanded* -> allows all accordian to be closed. 
